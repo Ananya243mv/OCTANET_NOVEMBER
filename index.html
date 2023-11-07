@@ -1,0 +1,28 @@
+<body>
+    <div class="container">
+        <h2>Foodie Wonderland To-Do List</h2>
+        <ul id="myList">
+            <li>Browse recipes online</li>
+            <li>Shop for ingredients</li>
+            <li>Cook a delicious meal</li>
+            <li>Try a new restaurant</li>
+        </ul>
+        <input type="text" id="myInput" placeholder="New task...">
+        <button onclick="newElement()" class="add-button">Add</button>
+    </div>
+
+    <script>
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var text = document.createTextNode(inputValue);
+            li.appendChild(text);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myList").appendChild(li);
+            }
+            document.getElementById("myInput").value = "";
+        }
+    </script>
+</body>
